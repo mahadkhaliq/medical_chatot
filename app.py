@@ -63,7 +63,6 @@ def query():
     response = qa_chain({'context': context, 'query': query_text})
 
     # Serialize the response here, modifying as necessary to match your response structure
-    # This is a generic example, assuming the response has a 'documents' attribute containing Document objects
     if hasattr(response, 'documents'):
         documents = response.documents
         serialized_docs = [{'title': doc.title, 'content': doc.content} for doc in documents]  # Customize based on your Document object attributes
